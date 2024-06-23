@@ -102,6 +102,14 @@ export function Header({ user }: HeaderProps) {
                 </div>
               </div>
             </Link>
+            
+            <Link href="/notebooks" className="h-full flex flex-col hover:bg-hover">
+              <div className="w-24 flex my-auto">
+                <div className="mx-auto flex text-strong px-2">
+                  <h1 className="flex text-sm font-bold my-auto">Notebooks</h1>
+                </div>
+              </div>
+            </Link>
           </>
         )}
 
@@ -114,7 +122,3 @@ export function Header({ user }: HeaderProps) {
     </HeaderWrapper>
   );
 }
-
-/* 
-
-*/
