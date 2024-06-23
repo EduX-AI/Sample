@@ -26,12 +26,9 @@ export function Header({ user }: HeaderProps) {
     if (!response.ok) {
       alert("Failed to logout");
     }
-    // disable auto-redirect immediately after logging out so the user
-    // is not immediately re-logged in
     router.push("/auth/login?disableAutoRedirect=true");
   };
 
-  // When dropdownOpen state changes, it attaches/removes the click listener
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (
@@ -48,7 +45,6 @@ export function Header({ user }: HeaderProps) {
       document.removeEventListener("click", handleClickOutside);
     }
 
-    // Clean up function to remove listener when component unmounts
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
@@ -69,11 +65,11 @@ export function Header({ user }: HeaderProps) {
             settings && settings.default_page === "chat" ? "/chat" : "/search"
           }
         >
-          <div className="flex">
+          <div className="flex items-center">
             <div className="h-[32px] w-[30px]">
               <Image src="/logo.png" alt="Logo" width="1419" height="1520" />
             </div>
-            <h1 className="flex text-2xl text-strong font-bold my-auto">
+            <h1 className="flex text-2xl text-strong font-bold my-auto ml-2">
               EduX
             </h1>
           </div>
